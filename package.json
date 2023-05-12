@@ -25,10 +25,17 @@
     "./*": "./*"
   },
   "scripts": {
-    "test": "echo \"Happy hacking\" && 💙"
+    "prepack": "nyxr build",
+    "build": "unbuild",
+    "dev": "vitest dev",
+    "lint": "eslint --cache --ext .ts,.js,.mjs,.cjs .",
+    "lint:fix": "eslint --cache --ext .ts,.js,.mjs,.cjs . --fix",
+    "release": "nyxr test && nyxlx changelogen@latest --release --push && pnpm publish",
+    "test": "nyxr lint && vitest run --coverage"
   },
   "devDependencies": {
     "@nyxb/eslint-config": "^0.0.53",
+    "@nyxb/nyxi": "^0.0.28",
     "@types/node": "^18.16.8",
     "@vitest/coverage-c8": "^0.31.0",
     "eslint": "^8.40.0",

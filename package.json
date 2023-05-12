@@ -1,35 +1,45 @@
 {
   "name": "magicase",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "🔮 Magical utility for string casing",
+  "author": "Dennis Ollhoff <contact@nyxb.xyz>",
   "license": "MIT",
   "hompage": "https://💻nyxb.ws",
   "repository": {
     "type": "git",
-    "url": "git+https://example.com.git"
+    "url": "git+https://github.com/nyxblabs/magicase.git"
   },
   "bugs": {
-    "url": "https://github.com/example/issues"
+    "url": "https://github.com/nyxblabs/magicase/issues"
   },
-  "bin": {
-    "example": "/dist/example.js"
-  },
-  "main": "example.js",
-  "module": "example.js",
-  "types": "example.d.ts",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/example.js",
-      "import": "./dist/example.mjs",
-      "types": "./dist/example.d.ts"
-    }
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
   },
   "scripts": {
     "test": "echo \"Happy hacking\" && 💙"
   },
   "dependencies": {},
-  "devDependencies": {},
-  "files": [],
+  "devDependencies": {
+    "@nyxb/eslint-config": "^0.0.53",
+    "@types/node": "^18.16.3",
+    "@vitest/coverage-c8": "^0.31.0",
+    "eslint": "^8.40.0",
+    "typescript": "^5.0.4",
+    "unbuild": "^1.2.1",
+    "vitest": "^0.31.0"
+  },
+  "packageManager": "pnpm@8.5.0",
+  "files": [
+    "dist"
+  ],
   "keywords": []
 }
